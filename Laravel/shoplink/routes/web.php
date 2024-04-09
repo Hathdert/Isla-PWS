@@ -18,3 +18,5 @@ Route::get('/', function () {
 });
 
 Route::get('/admin', 'App\Http\Controllers\AdminController@index')->name('dashboard');
+
+Route::resource('/admin/category', 'App\Http\Controllers\CategoryController');
