@@ -15,7 +15,15 @@ class CategoryController extends Controller
     {
         $categories = Category::all();
 
-        dd($categories);
+        //dd($categories);
+
+        //return view('category.index');
+
+        return view('category.index',[ 
+            
+            'categories' => $categories 
+            
+        ]);
     }
 
     /**
