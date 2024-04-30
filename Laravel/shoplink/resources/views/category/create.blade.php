@@ -3,6 +3,20 @@
 @section('content')
 <h1>New Category</h1>
 
+<div class="mb-3 col-md-4">
+
+    @if($errors->any())
+
+        <div class="alert alert-danger">
+            <ul>
+                @foreach($errors->all() as $error)
+                <li> {{ $error }} </li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+</div>
+
 <form name="category" method="POST" action="{{ route('category.store') }}">
     @csrf
     <div class="mb-3 col-md-4">
