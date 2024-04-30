@@ -10,7 +10,7 @@
         <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link href="//cdn.datatables.net/2.0.4/css/dataTables.dataTables.min.css" rel="stylesheet" />
-        <link href="{{ asset('css/styles.css')}}" rel="stylesheet" />
+        <link href="{{ asset('css/styles.css') }}" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
@@ -57,8 +57,8 @@
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="layout-static.html">Manutenção de produtos</a>
-                                    <a class="nav-link" href={{route('category.index')}}>Manutenção de categorias</a>
+                                    <a class="nav-link" href="layout-static.html">Manutenção de Produtos</a>
+                                    <a class="nav-link" href="{{ route('category.index') }}">Manutenção de Categorias</a>
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
@@ -135,6 +135,6 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
         </script>
         <script src="//cdn.datatables.net/2.0.4/js/dataTables.min.js"></script>
-        <script src="{{asset('js/scripts.js')}}"></script>
+        <script src="{{ asset('js/scripts.js') }}"></script>
     </body>
 </html>

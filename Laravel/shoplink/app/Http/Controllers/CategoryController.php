@@ -8,22 +8,15 @@ use App\Models\Category;
 
 class CategoryController extends Controller
 {
-    /**
+     /**
      * Display a listing of the resource.
      */
     public function index()
     {
         $categories = Category::all();
-
-        //dd($categories);
-
-        //return view('category.index');
-
-        return view('category.index',[ 
-            
-            'categories' => $categories 
-            
-        ]);
+        
+        return view('category.index',
+        ['categories' => $categories]);
     }
 
     /**
@@ -31,7 +24,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('category.create');
     }
 
     /**
@@ -39,7 +32,14 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $category = new Category();
+
+        $category->name = $request->name;
+        $category->status = $request->status;
+
+        $category->save();
+
+        return redirect()->route('category.index');
     }
 
     /**
@@ -48,6 +48,12 @@ class CategoryController extends Controller
     public function show(string $id)
     {
         //
+
+        $category = Category::find($id);
+
+        return view('category.show',
+        ['category' => $category]);
+
     }
 
     /**
@@ -55,7 +61,12 @@ class CategoryController extends Controller
      */
     public function edit(string $id)
     {
-        //
+
+        $category = Category::find($id);
+
+        return view('category.edit',
+        ['category' => $category]);
+        
     }
 
     /**
@@ -63,7 +74,19 @@ class CategoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        if( Category::where('id', $id)->exists()){
+
+            $category = Category::find($id);
+
+            $category->name = $request->name;
+            $category->status = $request->status;
+    
+            $category->save();
+
+
+        }
+
+        return redirect()->route('category.index');
     }
 
     /**
@@ -71,6 +94,14 @@ class CategoryController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        if( Category::where('id', $id)->exists()){
+
+            $category = Category::find($id);
+    
+            $category->delete();
+
+        }
+
+        return redirect()->route('category.index');
     }
 }
